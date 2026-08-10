@@ -1,0 +1,33 @@
+llm:
+  enabled: true
+  model: qwen3-14b
+  base_url: http://127.0.0.1:8000/v1
+  api_key_env: OPENAI_API_KEY
+  temperature: 0.0
+knowledge_base:
+  path: data/gbfr/fmkg.json
+reasoning:
+  max_depth: 6
+  enable_early_stop: false
+  evidence:
+    use_llm_fallback: true
+  dynamic:
+    enabled: true
+    source_path: data/gbfr/source_corpus.jsonl
+    top_k_sources: 8
+    min_confidence: 0.84
+    min_sources: 1
+    allow_rule_parser: true
+    use_llm_fallback: true
+    promotion_log: logs/dynamic_candidates_exhaustive.jsonl
+  path:
+    max_paths_per_metric: 8
+    min_path_score: -1.0
+  verification:
+    mode: llm
+    dynamic_requires_llm: true
+  budget:
+    max_llm_calls: 80
+    max_total_tokens: 60000
+    max_cost_usd: 1.0
+    max_paths_total: 64
