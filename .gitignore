@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.env
+logs/
+results/
+data/gbfr/
+external/
+*.jsonl.summary.json
