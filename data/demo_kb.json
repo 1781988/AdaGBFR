@@ -1,0 +1,12 @@
+{
+  "schema_version": "adagbfr-0.1",
+  "metrics": [
+    {"name":"Revenue","aliases":["Net Sales","Sales Revenue"],"definition":"Revenue earned from selling goods or services.","formulas":[],"origin":"static","confidence":1.0,"source_ids":["demo_static"]},
+    {"name":"Gross Profit","aliases":[],"definition":"Revenue minus cost of sales.","formulas":[],"origin":"static","confidence":1.0,"source_ids":["demo_static"]},
+    {"name":"Return on Equity","aliases":["ROE"],"definition":"Net income divided by average equity.","formulas":[{"expression":"Return on Equity = Net Income / Average Equity","dependencies":["Net Income","Average Equity"],"confidence":1.0,"source_ids":["demo_static"],"origin":"static"}],"origin":"static","confidence":1.0,"source_ids":["demo_static"]},
+    {"name":"Net Income","aliases":["Net Profit","Net Earnings"],"definition":"Profit after expenses and taxes.","formulas":[],"origin":"static","confidence":1.0,"source_ids":["demo_static"]},
+    {"name":"Average Equity","aliases":[],"definition":"Average equity during a period.","formulas":[{"expression":"Average Equity = Beginning Equity + Ending Equity","dependencies":["Beginning Equity","Ending Equity"],"confidence":0.5,"source_ids":["demo_static_bad_path"],"origin":"static"},{"expression":"Average Equity = (Beginning Equity + Ending Equity) / 2","dependencies":["Beginning Equity","Ending Equity"],"confidence":1.0,"source_ids":["demo_static"],"origin":"static"}],"origin":"static","confidence":1.0,"source_ids":["demo_static"]},
+    {"name":"Beginning Equity","aliases":["Opening Equity"],"definition":"Equity at the beginning of a period.","formulas":[],"origin":"static","confidence":1.0,"source_ids":["demo_static"]},
+    {"name":"Ending Equity","aliases":["Closing Equity"],"definition":"Equity at the end of a period.","formulas":[],"origin":"static","confidence":1.0,"source_ids":["demo_static"]}
+  ]
+}
