@@ -1,0 +1,41 @@
+llm:
+  enabled: false
+knowledge_base:
+  path: data/demo_kb.json
+reasoning:
+  max_depth: 6
+  enable_early_stop: true
+  early_stop_confidence: 0.94
+  near_tie_margin: 0.06
+  consistency_rtol: 0.0001
+  consistency_atol: 1.0e-8
+  evidence:
+    use_llm_fallback: false
+  dynamic:
+    enabled: true
+    source_path: data/demo_sources.jsonl
+    top_k_sources: 5
+    min_source_score: 0.0
+    min_confidence: 0.80
+    min_sources: 1
+    allow_rule_parser: true
+    use_llm_fallback: false
+    promotion_log: logs/demo_dynamic_candidates.jsonl
+  path:
+    max_paths_per_metric: 3
+    min_path_score: -1.0
+    w_evidence: 0.52
+    w_trust: 0.28
+    w_depth: 0.10
+    w_cost: 0.10
+  verification:
+    mode: adaptive
+    deterministic_confidence: 0.90
+    dynamic_requires_llm: false
+  budget:
+    max_llm_calls: 0
+    max_total_tokens: 1
+    max_cost_usd: 0.0
+    max_paths_total: 12
+    input_price_per_million: 0.0
+    output_price_per_million: 0.0
